@@ -1,0 +1,57 @@
+@layout('layouts.app')
+
+@section('content')
+
+<div class="col-1">
+    <form class="sell">
+            <fieldset>
+                <legend> Post your add</legend>
+                <div class="form-item">
+                    <label for="make">Enter the Make of your car: </label>
+                    <input type="text" name="make" placeholder="Make of the car">
+                </div>
+            
+                
+                <div class="form-item">
+                    <label for="year"> Enter the year of fabrication </label>
+                    <input type="text" name="year" placeholder="Year">  
+                </div>  
+
+                
+
+                <div class="form-item">
+                    <label for="color"> Enter color of the car</label>
+                    <input type="text" name="color" placeholder="Color">
+ 
+                </div> 
+
+                
+                <div class="form-item">
+                    <label for="cost"> Enter Price of the car</label>
+                    <input type="text" name="cost" placeholder="Cost">
+                </div> 
+
+                <div class="form-item">
+                    <label for="picture" class="file-upload"> Upload Picture</label>
+                    <input type="file" name="picture" placeholder="Car Picture">
+                </div> 
+                
+
+                <a href="" class="btn btn-sell">Sell</a>
+    
+    
+            </fieldset>
+
+
+            
+    
+    
+    
+    
+        </form>
+
+</div>
+
+
+
+@endsection

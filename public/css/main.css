@@ -1,0 +1,728 @@
+body{
+   
+    box-sizing:border-box;
+    width:100vw;
+    height:100vh;
+    font-family: roboto;
+    /* border: 1px solid lightslategray; */
+    color:  #696969 ;
+
+}
+html{
+    font-family: "helvetica neue", sans-serif;
+}
+
+
+
+.btn{
+    display:block;
+    width:80%;
+    height:40px;
+    background: linear-gradient(to left, rgb(253, 116, 108), rgb(255, 144, 104));
+    text-align:center;
+    font-size:20px;
+    margin:20px auto;
+    transition:.6s;
+    
+}
+
+.btn-tb{
+    width:50%;
+    height:20px;
+    background: linear-gradient(to left, rgb(253, 116, 108), rgb(255, 144, 104));
+   font-size:12px;
+   border-radius:5px;
+   color:#FDFFFC;
+   line-height:25px !important;
+}
+.btn-p{
+ display:inline-block;
+ width:30%;
+ float:right;
+}
+.confirm{
+    width:85%;
+}
+
+.btn-tb-admin{
+    display:inline-block;
+    width:30%;
+    height:20px;
+    line-height:25px !important;
+    font-size:10px;
+    margin-left:5px;
+
+}
+
+.d-admin table{
+    width:80%;
+}
+
+.btn:hover{
+    background:orangered;
+    
+}
+.btn--sm{
+    font-size:12px;
+    display:inline-block !important;
+    width:30%;
+    line-height:25px !important;
+    height:20px;
+    color:#235789;
+    font-weight: bold;
+}
+
+btn--sm:hover{
+    border:1px solid #235789;
+}
+
+.user-type [class^="nav"]{
+border-left:1px solid orangered;
+color:orangered !important;
+font-weight:bold;
+  
+}
+.btn{text-decoration:none;
+   color:#235789;
+line-height:40px;}
+
+.nav{
+    background-color: rgba(234,234,234,.8)
+}
+.nav a{
+    text-decoration:none;
+   
+    color:#235789;
+    border-radius;2px;
+    height:80px;
+    font-size:14px;
+    
+    
+  
+}
+
+.nav__logo{
+    margin:10px;
+    float:left;
+    width:100px;
+    font-size:20px;
+ 
+}
+[class^="nav__s"]{
+    margin:10px;
+    width:60px;
+    float:right;
+    cursor: pointer;
+    letter-spacing: 2px; 
+}
+.nav label{
+    margin: 0 40px 0 0;
+    font-size:26px;
+    display:none;
+
+}
+#toggle{
+    display:none;
+}
+
+.nav::after{
+    content:"";
+    display:table;
+    clear:both;
+}
+.cover{
+    width:100%;
+    height: 80vh;
+}
+.img-logo{
+    margin-top:10px;
+    padding:15px;
+    height:200px;
+}
+
+
+
+.row{
+    max-width: 1140px;
+ 
+    margin: auto;
+}
+.row:not(:last-child){
+    margin-bottom:80px;
+}
+.pagination{
+    
+    position:relative;
+    top:-40px;
+    text-align:center;
+
+}
+.pagination a {
+    font-size:12px;
+    color:#235789;
+    border-bottom: 1px dashed orangered;
+}
+
+
+
+.col-1-of-2{
+    width:calc((100% - 60px)/2);
+    background-color: #FDFFFC;
+    float:left;
+}
+.col-1-of-2:not(:last-child){
+    margin-right:60px;
+}
+
+.col-1-of-3{
+    width:calc((100% - 2*60px)/3);
+    background-color: #FDFFFC;
+    
+    float:left;
+}
+.col-1-of-3:not(:last-child){
+    margin-right:60px;
+}
+.col-1-of-4{
+    width:calc((100% - 3*64px)/4);
+    background-color: #FDFFFC;
+    float:left;
+    text-align:center;
+    box-shadow: 5px 0 25px  rgba(0,0,0,0.5));
+}
+
+.col-1-of-4:not(:last-child){
+    margin-right:60px;
+}
+
+
+
+.row::after{
+    content:"";
+    display:table;
+    clear:both;
+}
+
+.footer{
+   background-color:#F1D302;
+   height:200px;
+}
+
+
+
+
+ /* Sign up Page css       
+   Create a Modal   */
+
+  .signup{
+      width:100vw;
+      height:100vh;
+      position: absolute;
+      background : rgba(82, 66, 66, 0.7);
+      top:0;
+      display:none;
+      scroll-behavior: initial;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+      overflow:hidden;
+
+      
+
+  }  
+  .signIn{
+    width:100vw;
+    height:100vh;
+    position: absolute;
+    background : rgba(0,0,0,0.7);
+    top:0;
+    display:none;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    overflow: hidden;
+    
+
+  }
+
+
+  .signup__form{
+     width: 400px;
+     height:500px;
+     background:#8C5E58;
+     margin: 0 auto;
+     position:relative;
+     top:50%;
+     transform:translateY(-250px);
+     text-align:center;
+
+     
+
+  }
+
+  .signup__form__close{
+      position:absolute;
+      font-size: 50px;
+      left:350px;
+      color:white;
+      transform:rotate(45deg);
+      cursor: pointer ;
+
+  }
+
+  .signup__form input{
+      display:block;
+      font-size:16px;
+      margin:15px auto;
+      width:200px;
+      height:30px;
+      border-radius:2px;
+      border: 1px solid #B0B0B0;
+      
+
+  }
+
+  .signup__form__submit{
+        display:block;
+        width:100px;
+        height:30px;
+      background-color:#B0B0B0; 
+      margin: 20px auto;
+      border-radius:2px;
+     }
+ 
+
+ .background{
+     background-image: url('/images/cover-car.jpg');
+     background-size:cover;
+    
+     background-position: center;
+     background-color:rgb(15, 47, 77);
+     background-blend-mode:color-dodge;
+     margin-bottom:100px;
+     
+ }
+/* 
+Sell car css */
+
+
+.total-price{
+    text-align:right;
+    font-weight: bold;
+    font-size:25px;
+    color:#235789
+}
+
+form{
+    
+    width:100%;
+    position:relative;
+    top:50%;
+    
+    
+    transform: translateY(-300px);
+
+}
+fieldset{
+    width:50%;
+    box-sizing: padding-box;
+    
+   margin: 0 auto;
+   padding: 20px;
+
+}
+
+fieldset legend{
+   
+    letter-spacing: 2px;
+    font-size:20px;
+    font-weight: bold;
+    color:#235789;
+    text-transform: uppercase;
+ 
+}
+
+.form-item{
+    display:block;
+    width:80%;
+    margin:30px auto;   
+}
+.form-item label,input{
+    display : block;
+   
+}
+.form-item input[type="text"]{
+    width:100%;
+    height:30px;
+    border:none;
+    border-bottom: 1px solid #235789 ;
+}
+.form-item input[type="file"]{
+    
+    font-size:19px;
+    background-color:#235789;
+    color:#69DDFF;
+}
+
+
+fieldset .btn{
+    margin-top:50px;
+}
+
+h1{
+    color:#8C5E58;
+}
+.col-1{
+    height:100vh;
+}
+
+/* css for buy a car */
+
+.info-car{
+    display:block;
+    width:100%;
+    height:70px;
+    background:linear-gradient(to left,#F1D302,#69DDFF,#235789);
+    margin-bottom:100px
+}
+.car-info{
+    
+    width:100%;
+    margin-bottom:100px;
+}
+/* .car-photo{
+   
+   width:50%;
+   text-align:right;
+   height:100% !important;
+   float:left;
+    background-color:orangered;
+   
+}  */
+.col-1-of-2.car-info{
+    width:40%;
+
+}
+.col-1-of-2 img{
+    max-width:100%;
+}
+.car-details{
+    width:60%
+}
+
+
+fieldset.buy{
+   
+    width:100%;
+}
+.form-item.buy label{
+    font-weight:bold;
+   
+    font-size:18px;
+}
+.form-item span{
+    font-style:italic;
+    position:relative;
+    display:inline-block;
+    top:-5px;
+    font-size:10px;
+    color:#235789 
+}
+
+
+table{
+    margin:20px;
+    width:85%;
+    border-spacing:40px;
+    margin-bottom:20px;
+}
+th{
+    text-align:left;
+    background-color:#69DDFF;
+    color:#235789;
+    
+}
+table,th , td{
+   border:none; 
+   border-collapse:collapse;
+}
+
+
+th , td{
+   padding:20px;
+
+ }
+ tr{
+     border:none;
+ }
+
+ tr:nth-child(even){
+     background-color:#EAEAEB;
+ }
+      
+ 
+/* Searching in the table */
+
+.row-search{
+    background:linear-gradient(to left,#235789,#69DDFF);
+    width:90%;
+    margin:70px auto;
+}
+.row-search::after{
+    content:"";
+    display:table;
+    clear:both;
+}
+
+.row-search input{
+    display:inline-block;
+    margin-left:20px;
+    height:30px;
+    margin-right:5px;
+    border-radius:4px;
+}
+.row-search__column{
+    display:block;
+    width:25%;
+    float:left
+}
+
+hr{
+    color: rgba(241,211,2,0.3)
+
+}
+.label-search{
+    display:block;
+    text-align:center;
+    margin-bottom: 10px;
+    color:black;
+
+
+}
+select{
+    color:orangered !important;
+}
+
+h2{
+    display:inline-block;
+    width:70%;
+}
+/*
+0-600px: Phone
+600-900px: Tablet Landscape
+600 - 900px: Tablet Portrait
+(1200 - 1800px) is where our normal styles apply
+1800px : Big desktop
+
+
+*/
+@media screen and (max-width:1800px){
+
+    img{max-width:100%;
+        display:block;
+        margin:0 auto;
+      }
+      fieldset{
+          width:80%;
+      }
+        
+}
+
+
+    @media screen and (max-width:820px){
+
+        .btn-tb-admin{
+            display:block;
+            width:100%;
+          }
+      
+
+        .form-item input[type="file"]{
+        
+            font-size:12px !important;
+            background-color:#235789;
+            color:#69DDFF;
+        }
+        
+        img{max-width:100%;
+          display:block;
+          margin:0 auto;
+        }
+        .col-1-of-4{
+            width:calc((50% - 60px));
+            background-color: #FDFFFC;
+            float:left;
+            margin-right: 0px !important;   
+           
+          }
+
+         .col-1-of-4:nth-child(odd){
+           
+            margin-right:100px !important;
+         } 
+         
+          
+
+        
+        }
+
+
+
+@media screen and (max-width:600px){
+
+    table{
+        width:30%;
+        font-size:10px;
+    }
+
+    .btn-tb-admin{
+        display:block;
+        width:100%;
+      }
+
+    .row-search__column{
+        display:block;
+        width:50%;
+       
+    }
+    
+    .col-1-of-2.car-info{
+
+        width:100%;
+        margin-top:100px;
+    
+    }
+
+    
+    
+fieldset.buy{
+    height:80vh;
+    width:70%;
+}
+.col-1-of-2 img{
+    max-width:70%;
+}
+    
+    .nav label{
+        display:block;
+        cursor:pointer;
+        margin-right:20px;
+        font-size:26px;
+        float:right;
+    }
+    .menu [class ^="nav"]{
+        display:none;
+        float:none;
+        text-align:center;
+        width:80%;
+        height:15px;
+        font-size:10px;
+        margin:0 auto;
+        border-bottom :1px solid #EAEAEB;
+        clear:both;
+    }
+     nav::after{
+         content:"";
+         display:table;
+         clear:both;
+     }
+     .dashboard{
+         margin-top:100px;
+     }
+
+    #toggle:checked + .menu [class ^="nav"]{
+       display:block; 
+    }
+
+   
+    .form-item input[type="file"]{
+        
+        font-size:10px;
+        background-color:#235789;
+        color:#69DDFF;
+    }
+    fieldset{
+        margin-top:100px;
+        margin-bottom:40px;
+        width:50%;
+    }
+    
+    
+    img{max-width:100%;
+        display:block;
+        margin:0 auto;
+      }  
+  .col-1-of-2{
+    width:calc((100% - 30px));
+    background-color: #FDFFFC
+    margin-bottom:10px;
+    margin-right:0 auto !important;
+  
+  }
+  
+  .col-1-of-3{
+    width:calc((100% - 30px));
+    background-color: #FDFFFC;
+    
+    margin-bottom:10px;
+    margin-right:0px auto !important;
+  
+  }
+  .col-1-of-4{
+    width:calc((100% - 30px));
+    background-color: #FDFFFC;
+    margin-bottom:10px;
+    margin-right:0px auto!important;
+  }
+  
+        
+}
+
+@media screen and (max-width:530px){
+
+    table{
+        width:30%;
+        font-size:10px;
+    }
+
+
+    .row-search__column{
+        display:inline-block;
+    }
+
+    .menu [class ^="nav"]{
+        display:none;
+        float:none;
+        text-align:center;
+        width:80%;
+        height:20px;
+        line-height:70px;
+        margin:0 auto;
+        border-bottom :1px solid #EAEAEB;
+        clear:both;
+    }
+   fieldset legend{
+       font-size:12px;
+   }
+   
+    #toggle:checked + .menu [class ^="nav"]{
+        display:block ;
+     }
+
+    label{
+        font-size:12px;
+    }
+    
+    fieldset{
+        margin-top:100px;
+        margin-bottom:40px;
+        width:50%;
+    }
+    .form-item input[type="file"]{
+        
+        font-size:2px;
+        background-color:#235789;
+        color:#69DDFF;
+        width:80px;
+    }
+
+}
+
+
+
