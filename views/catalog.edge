@@ -84,6 +84,10 @@
     
     </div>
 
+@each(ad in ads)
+<img class="img-catalog" src="{{ad.image}}" alt="">
+
+@endeach
 
 <div class="row">
    <div class="col-1-of-4"><img src="https://via.placeholder.com/200" alt="car-photo"><a href="view.html" class="btn  btn--sm btn--view">View</a> <a href="buy.html" class="btn btn--sm btn--buy">Buy</a> </div>

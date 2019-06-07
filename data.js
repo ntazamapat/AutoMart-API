@@ -20,6 +20,7 @@ const AllData=[
             "manufacturer": "TALKOLA",
             "model": "TALKOLA",
             "body_type": "car",
+            "image":"https://res.cloudinary.com/dmgeldhs1/image/upload/v1559896345/picture1_iv7ce0.jpg",
             "order": {
               "id": 1,
               "buyer": 1,
@@ -52,6 +53,7 @@ const AllData=[
             "state": "new",
             "status":"sold",
             "manufacturer": "COMBOGEN",
+            "image":"https://res.cloudinary.com/dmgeldhs1/image/upload/v1559897310/picture2_gdrctj.jpg",
             "model": "",
             "body_type": "car",
             "order": {
@@ -99,6 +101,7 @@ const AllData=[
             "state": "new",
             "status":"available",
             "manufacturer": "PHEAST",
+            "image":"https://res.cloudinary.com/dmgeldhs1/image/upload/v1559908487/picture-3_eodgfh.jpg",
             "model": "",
             "body_type": "car",
             "order": {
@@ -133,6 +136,7 @@ const AllData=[
             "state": "new",
             "status":"sold",
             "manufacturer": "XPLOR",
+            "image":"https://res.cloudinary.com/dmgeldhs1/image/upload/v1559908590/picture-4_qprhyo.jpg",
             "model": "",
             "body_type": "car",
             "order": {
@@ -180,6 +184,7 @@ const AllData=[
             "state": "new",
             "status":"available",
             "manufacturer": "ZOLAVO",
+            "image":"https://res.cloudinary.com/dmgeldhs1/image/upload/v1559908605/picture-5_halmns.jpg",
             "model": "ZOLAVO",
             "body_type": "car",
             "order": {
@@ -213,6 +218,7 @@ const AllData=[
             "state": "new",
             "status":"available",
             "manufacturer": "PROGENEX",
+            "image":"https://res.cloudinary.com/dmgeldhs1/image/upload/v1559908668/picture-6_rzpp7i.jpg",
             "model": "PROGENEX",
             "body_type": "car",
             "order": {
@@ -260,6 +266,7 @@ const AllData=[
             "state": "new",
             "status":"sold",
             "manufacturer": "ENQUILITY",
+            "image":"https://res.cloudinary.com/dmgeldhs1/image/upload/v1559908685/picture-7_qhbu9u.jpg",
             "model": "ENQUILITY",
             "body_type": "car",
             "order": {
@@ -294,6 +301,7 @@ const AllData=[
             "state": "new",
             "status":"sold",
             "manufacturer": "CINESANCT",
+            "image":"https://res.cloudinary.com/dmgeldhs1/image/upload/v1559908697/picture-8_zkkkty.jpg",
             "model": "CINESANCT",
             "body_type": "car",
             "order": {
@@ -323,42 +331,42 @@ const AllData=[
         ]
       }
     },
-   { 
-       "user":{
-        "id":5,
-        "firstName":"Reine",
-        "lastName":"Alice",   
-        "email":"reinelic",
-        "password":"andela",
-        "cars":[
-            {
-                id:"10",
-                "owner":5,
-                "status":"available",
-                "state":"new",
-                "price":3980.45,
-                "order" :{
-                    "id":9,
-                    "car_id":9,
-                    "status":"",
-                    "amount":""
+//    { 
+//        "user":{
+//         "id":5,
+//         "firstName":"Reine",
+//         "lastName":"Alice",   
+//         "email":"reinelic",
+//         "password":"andela",
+//         "cars":[
+//             {
+//                 id:"10",
+//                 "owner":5,
+//                 "status":"available",
+//                 "state":"new",
+//                 "price":3980.45,
+//                 "order" :{
+//                     "id":9,
+//                     "car_id":9,
+//                     "status":"",
+//                     "amount":""
                     
                     
-                },
+//                 },
                 
-                "manufacturer":"Mercedes",
-                "model":"MayBach"
-          }
-        ]
+//                 "manufacturer":"Mercedes",
+//                 "model":"MayBach"
+//           }
+//         ]
 
 
 
-   }
+//    }
    
 
         
 
-      }
+//       }
   ];
 
 

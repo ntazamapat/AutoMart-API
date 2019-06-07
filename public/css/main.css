@@ -12,7 +12,10 @@ html{
     font-family: "helvetica neue", sans-serif;
 }
 
-
+.img-catalog{
+    width:300px;
+    height:200px
+}
 
 .btn{
     display:block;

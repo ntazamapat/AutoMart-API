@@ -22,7 +22,6 @@ const AllData = require("./data");
 
 
 
-
 app.listen(3000,()=>{ return("The server is listening on port 3000")});
 
 app.use(express.static('public'));

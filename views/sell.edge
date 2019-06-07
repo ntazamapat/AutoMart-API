@@ -2,10 +2,9 @@
 
 @section('content')
 <div class="col-1">
-    <form class="sell" action="/api/v1/car" method="POST">
+    <form class="sell" action="/api/v1/car" method="POST" enctype="multipart/form-data">
         <fieldset>
             <legend> Post your add</legend>
-
             <div class="form-item">
                 <label for="Email">Enter your email: </label>
                 <input type="text" name="email" placeholder="Make of the car">
@@ -48,8 +47,8 @@
             </div> 
 
             <div class="form-item">
-                <label for="picture" class="file-upload"> Upload Picture</label>
-                <input type="file" name="picture" placeholder="Car Picture">
+                <label for="image" class="file-upload"> Upload Picture</label>
+                <input type="file"  id="image" name="image" placeholder="Car Picture" accept="image/*">
             </div> 
             
 
