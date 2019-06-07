@@ -136,11 +136,11 @@
                 <img src="https://via.placeholder.com/150" alt="AutoMart-logo" >  
           </div>
            
-           <form action="">
+           <form action="/api/v1/auth/signup" method="POST">
 
-           <input type="text" placeholder="Name">
-           <input type="text" placeholder="Surname">
-           <input type="email" placeholder="Email">
+           <input type="text" placeholder="FirstName" name="first_name">
+           <input type="text" placeholder="Lastname" name="last_name">
+           <input type="email" placeholder="Email" name="email">
            <input type="password" placeholder="Password">
 
            <a href="" class="signup__form__submit"> Sign up</a>
@@ -160,11 +160,11 @@
             <img src="https://via.placeholder.com/150" alt="AutoMart-logo" >  
       </div>
         
-        <form action="">
+        <form action="/api/v1/auth/signin" method="POST">
 
        
-        <input type="email" placeholder="Email">
-        <input type="password" placeholder="Password">
+        <input type="email" placeholder="Email" name="email">
+        <input type="password" placeholder="Password" name="password">
 
         <a href="" class="signup__form__submit"> Login</a>
 

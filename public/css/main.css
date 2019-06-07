@@ -166,6 +166,9 @@ line-height:40px;}
     border-bottom: 1px dashed orangered;
 }
 
+.col-1{
+    margin-top:50px;
+}
 
 
 .col-1-of-2{
@@ -207,6 +210,7 @@ line-height:40px;}
 }
 
 .footer{
+   margin-top:300px; 
    background-color:#F1D302;
    height:200px;
 }
@@ -327,6 +331,8 @@ fieldset{
     box-sizing: padding-box;
     
    margin: 0 auto;
+   margin-bottom:30px;
+   margin-top:100px;
    padding: 20px;
 
 }
@@ -462,7 +468,7 @@ th , td{
  
 /* Searching in the table */
 
-.row-search{
+/* .row-search{
     background:linear-gradient(to left,#235789,#69DDFF);
     width:90%;
     margin:70px auto;
@@ -471,7 +477,7 @@ th , td{
     content:"";
     display:table;
     clear:both;
-}
+} */
 
 .row-search input{
     display:inline-block;

@@ -10,10 +10,14 @@ const bodyParser = require("body-parser");
 
 const routeCars = require("./route/car");
 
+ const UserRoute = require("./route/user")
+ 
 
 const app = express();
 
 app.use(routeCars);
+
+app.use(UserRoute);
 
 
 
