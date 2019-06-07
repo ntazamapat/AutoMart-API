@@ -11,6 +11,8 @@ const bodyParser = require("body-parser");
 const routeCars = require("./route/car");
 
  const UserRoute = require("./route/user")
+
+ const OrderRoute = require("./route/order")
  
 
 const app = express();
@@ -18,6 +20,8 @@ const app = express();
 app.use(routeCars);
 
 app.use(UserRoute);
+
+app.use(OrderRoute);
 
 
 
@@ -54,7 +58,7 @@ app.get('/api/v1/sell',(req,res)=>{
 })
 
 app.get('/api/v1/catalog',(req,res)=>{
-    res.render("catalog");
+    res.render("purchase");
 })
 
 

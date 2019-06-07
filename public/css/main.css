@@ -468,7 +468,7 @@ th , td{
  
 /* Searching in the table */
 
-/* .row-search{
+ .row-search{
     background:linear-gradient(to left,#235789,#69DDFF);
     width:90%;
     margin:70px auto;
@@ -477,7 +477,7 @@ th , td{
     content:"";
     display:table;
     clear:both;
-} */
+} 
 
 .row-search input{
     display:inline-block;

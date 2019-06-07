@@ -1,0 +1,47 @@
+@layout('layouts.app')
+
+@section('content')
+<div class="col-1">
+    <form class="sell" action="/api/v1/car" method="POST" enctype="multipart/form-data">
+        <fieldset>
+            <legend> Make a purchase Order</legend>
+            <div class="form-item">
+                <label for="car_id">Enter the ID of the car: </label>
+                <input type="text" name="car_id" placeholder="The ID of the car">
+            </div>
+
+        
+            
+            <div class="form-item">
+                <label for="amount"> Enter your price </label>
+                <input type="text" name="amount" placeholder="bid price">  
+            </div>  
+
+            
+
+            <div class="form-item">
+                <label for="buyer"> Enter buyer ID</label>
+                <input type="text" name="buyer" placeholder="Buyer ID">
+
+            </div> 
+
+            
+            
+            <button type="submit" class="btn btn-sell">Sell</button>
+
+    
+            </fieldset>
+
+
+            
+    
+    
+    
+    
+        </form>
+
+</div>
+
+
+
+@endsection
