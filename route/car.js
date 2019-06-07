@@ -44,6 +44,21 @@ router.get('/api/v1',CarsController.getHomepage);
 router.post('/api/v1/car',upload.single('image'),CarsController.postanAd)
 
 
+router.get('/api/v1/car',CarsController.getCarStatus);
+
+router.get('/api/v1/car/',CarsController.getcarStatusPrice);
+
 router.get('/api/v1/car/',CarsController.getAllCars);
+
+
+router.get('/api/v1/car/:id',CarsController.getCar);
+
+router.patch('api/v1/car/:id/:status',CarsController.getCarStatusId);
+
+router.patch('/api/v1/car/:id/price',CarsController.getCarIDPrice);
+
+router.delete('/api/v1/car/:id',CarsController.deleteCar)
+
+
 
 module.exports = router;

@@ -29,94 +29,74 @@
 </div>
 
 <div class="row-search">
-<input type="text" placeholder="Search Car..">   
-<h2>SEARCH FOR CAR</h2>
-<hr>
-<span class="row-search__column">
-    <div class="label-search">
-            <label for="make">Make</label>
-            <select name="" id=""> <option value="">Make</option></select>            
-    </div>
-
-    <div class="label-search">
-
-            <label for="make">Year</label>
-            <select name="" id=""> <option value="">Yeae</option></select> 
-
-    </div>
-  
-
-
-</span>
-
-<span class="row-search__column">
-        <div class="label-search">
-                <label for="price">Price Range</label>
-                <select name="" id=""> <option value="">100- 300</option></select>            
-        </div>
-    
-        <div class="label-search">
-    
-                <label for="manu">Manufacturer</label>
-                <select name="" id=""> <option value="">TOYOTA</option></select> 
-    
-        </div>
+        <form action="/api/v1/car" method="GET">
+           
+      <!-- <input type="text" placeholder="Search Car..">    -->
+      <h2>SEARCH FOR CAR</h2>
+      <hr>
+      <span class="row-search__column">
+        
+                  <label for="make">Status</label>
+                  <select name="status" > 
+                      <option value="available">available</option>
+                      <option value="pending">pending</option>
+                      <option value="sold">sold</option>
+                  </select>              
+      </span>
       
-    
-    
-</span>
-
-<span class="row-search__column">
-        <div class="label-search">
-                <label for="make">Car State</label>
-                <select name="" id=""> <option value="">old</option></select>            
-        </div>
-    
-        <div class="label-search">
-    
-                <label for="make">Year</label>
-                <select name="" id=""> <option value="">option1</option></select> 
-    
-        </div>
-      
-    
-    
-    </span>
-
-    <span class="row-search__column">
-            <div class="label-search">
-                    <label for="make">Make</label>
-                    <select name="" id=""> <option value="">option1</option></select>            
-            </div>
-        
-            <div class="label-search">
-        
-                    <label for="make">Year</label>
-                    <select name="" id=""> <option value="">option1</option></select> 
-        
-            </div>
+      <span class="row-search__column">
+              <div class="label-search">
+                      <label for="price">Minimum price</label>
+                      <select name="min_price"> 
+                          <option value="0">0</option>
+                          <option value="100">1000</option>
+                          <option value="500">2000</option>
+                          <option value="1000">4000</option>
+                          <option value="2000">9000</option>
+                      </select>            
+              </div>
           
-        
-        
-        </span>    
-
-
-
-</div>
-
-
-
+              <div class="label-search">
+                  
+                      <label for="price">Maximum price</label>
+                      <select name="max_price">
+                             <option value="0">0 </option> 
+                            <option value="100">1000</option>
+                            <option value="500">2000</option>
+                            <option value="1000">4000</option>
+                            <option value="2000">9000</option>
+                      </select>            
+              </div>
+          </span> 
+             
+            
+          
+          
+      <span class=""> <input type="submit"></span>
+          
+      
+      </form>
+      
+          
+      
+      
+      
+      </div>
+      
+      
+      
+      
 
 
    <div class="row">
        <div class="col-1-of-4"><img class="img-catalog" src="{{cars[0].image}}" alt="">
-        <a href="/api/v1/car/{{cars[0].id}}" class="btn  btn--sm btn--view">View</a> <a href="buy.html" class="btn btn--sm btn--buy">Buy</a> </div>
+        <a href="/api/v1/car/{{cars[0].id}}" class="btn  btn--sm btn--view">View</a> <a href="buy.html" class="btn btn--sm btn--buy">Buy</a><a href="/api/v1/car/{{cars[0].id}}" class="btn  btn--sm btn--delete">Delete</a>  </div>
        <div class="col-1-of-4"><img class="img-catalog" src="{{cars[1].image}}" alt="">
-        <a href="/api/v1/car/{{cars[1].id}}" class="btn  btn--sm btn--view">View</a> <a href="buy.html" class="btn btn--sm btn--buy">Buy</a></div>
+        <a href="/api/v1/car/{{cars[1].id}}" class="btn  btn--sm btn--view">View</a> <a href="buy.html" class="btn btn--sm btn--buy">Buy</a><a href="/api/v1/car/{{cars[0].id}}" class="btn  btn--sm btn--delete">Delete</a></div>
        <div class="col-1-of-4"><img class="img-catalog" src="{{cars[2].image}}" alt="">
-        <a href="/api/v1/car/{{cars[2].id}}" class="btn btn--sm btn--view">View</a> <a href="buy.html" class="btn btn--sm btn--buy">Buy</a></div>
+        <a href="/api/v1/car/{{cars[2].id}}" class="btn btn--sm btn--view">View</a> <a href="buy.html" class="btn btn--sm btn--buy">Buy</a><a href="/api/v1/car/{{cars[0].id}}" class="btn  btn--sm btn--delete">Delete</a></div>
        <div class="col-1-of-4"><img class="img-catalog" src="{{cars[3].image}}" alt="">
-        <a href="/api/v1/car/{{cars[3].id}}" class="btn btn--sm btn--view">View</a> <a href="buy.html" class="btn btn--sm  btn--buy">Buy</a></div>
+        <a href="/api/v1/car/{{cars[3].id}}" class="btn btn--sm btn--view">View</a> <a href="buy.html" class="btn btn--sm  btn--buy">Buy</a><a href="/api/v1/car/{{cars[0].id}}" class="btn  btn--sm btn--delete">Delete</a></div>
    </div>
 
    <div class="row">

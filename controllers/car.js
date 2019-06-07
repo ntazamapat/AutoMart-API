@@ -130,3 +130,171 @@ exports.getAllCars = (req,res)=>{
     console.log(ads); 
     res.render("catalog",{ads:ads})
 }
+
+exports.getCar=(req,res)=>{
+    var carId = req.params.id;
+     var car = allcars.find(elt=>elt.id === parseInt(carId));
+     if(!car){
+         res.status(404).send("The requested car does not exist");
+         return;
+     }
+
+     var response = {
+         "status":200,
+         "data":car
+     }
+
+     res.send(response);
+
+
+}
+ exports.getcarStatusPrice = (req,res)=>{
+    var status = req.query.status;
+    var minPrice = req.query.min_price;
+    var maxPrice =req.query.max_price;
+
+    if(parseInt(minPrice) == 0||parseInt(maxPrice) == 0)
+    {
+        var availableCars = allcars.filter(elt =>elt.status===status);
+    if(!availableCars)
+    {
+        res.status(404).send("There is no available car ")
+    }
+
+    var response = {
+        "status":200,
+        "data":availableCars
+    }
+
+    res.send(response);
+    return;
+
+
+    }
+
+    var carsAvailable = allcars.filter(elt=> elt.status ===status);
+    res.send(carsAvailable);
+     
+    if(carsAvailable.length == 0)
+    {
+        res.status(404).send("there is no available car");
+        return;
+    }
+    var carPriRg = carsAvailable.filter(elt=>{ 
+        if(elt.price>parseInt(minPrice)&&elt.price<parseInt(maxPrice)){
+            return elt;
+        }
+    })
+    
+    if(!carPriRg){
+        res.status(404).send("there is no available car with the specified price range");
+        return;
+    }
+    var response={
+        "status":200,
+        "data":carPriRg
+    };
+
+    res.send(response);
+
+}
+
+exports.getCarStatus = (req,res)=>{
+    var status = req.query.status;
+    var availableCars = allcars.filter(elt =>elt.status===status);
+    if(!availableCars)
+    {
+        res.status(404).send("There is no available car ")
+    }
+
+    var response = {
+        "status":200,
+        "data":availableCars
+    }
+
+    res.send(response);
+}
+
+exports.getCarStatusId = (req,res)=>{
+
+    var carId= req.params.id;
+    var status=req.params.status;
+    var car = allcars.find(elt=>elt.id === parseIn(carId));
+    if(!car){
+        res.status(400).send("the car is not available!");
+        return;
+    }
+    var user = AllData.find(elt=>elt.user.id === car.owner);
+    var newC = user.cars.find(elt.id === parseInt(carId));
+    newC.status=status;
+    var response = {
+        "status":200,
+        "data":{
+            "id":carId,
+            "email":user.email,
+            "created_on":newcar.created_on,
+            "manufacturer":newcar.manufacturer,
+            "model":newcar.model,
+            "price":newcar.price,
+            "state":newcar.state,
+            "status":newcar.status
+
+        }
+
+    }
+    res.send(response);
+    
+
+}
+
+exports.getCarIDPrice = (req,res)=>{
+    var carId= req.params.id;
+    var price=req.params.price;
+    var car = allcars.find(elt=>elt.id === parseIn(carId));
+    if(!car){
+        res.status(400).send("the car is not available!");
+        return;
+    }
+    var user = AllData.find(elt=>elt.user.id === car.owner);
+    var newC = user.cars.find(elt.id === parseInt(carId));
+    newC.price=price;
+    var response = {
+        "status":200,
+        "data":{
+            "id":carId,
+            "email":user.email,
+            "created_on":newcar.created_on,
+            "manufacturer":newcar.manufacturer,
+            "model":newcar.model,
+            "price":newcar.price,
+            "state":newcar.state,
+            "status":newcar.status
+
+        }
+
+    }
+    res.send(response);
+
+}
+
+
+exports.deleteCar = (req,res)=>{
+    var carId= req.params.id;
+    var car = allcars.find(elt=>elt.id === parseIn(carId));
+    if(!car){
+        res.status(400).send("the car is not available!");
+        return;
+    }
+    var user = AllData.find(elt=>elt.user.id === car.owner);
+    var newC = user.cars.find(elt.id === parseInt(carId));
+    var indexCar = user.cars.indexOf(newCar);
+    user.cars =user.cars.splice(indexCar,1);
+
+    var response ={
+        "status":200,
+        "data":"Car Add successfully deleted"
+            }
+    
+}
+
+
