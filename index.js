@@ -44,6 +44,10 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.set('views',`${__dirname}/views`);
 
 
+app.get('/',(req,res)=>{
+    res.render("index");
+})
+
 app.get('/api/v1',(req,res)=>{
     res.render('index');
 })
