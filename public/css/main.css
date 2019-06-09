@@ -141,6 +141,7 @@ line-height:40px;}
     background-image: url('https://res.cloudinary.com/dmgeldhs1/image/upload/v1559895272/m532uloapiqjulxmt8jy.jpg');
     background-blend-mode: lighten;
     background-position: center;
+    background-size:cover;
 }
 .img-logo{
     margin-top:10px;
