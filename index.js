@@ -45,7 +45,7 @@ app.set('views',`${__dirname}/views`);
 
 
 app.get('/',(req,res)=>{
-    res.render("index");
+    res.redirect('/api/v1')
 })
 
 app.get('/api/v1',(req,res)=>{
