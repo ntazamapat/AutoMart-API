@@ -133,12 +133,14 @@ line-height:40px;}
     display:table;
     clear:both;
 }
+
 .cover{
     width:100%;
     height: 80vh;
     background-color: #235789;
     background-image: url('https://res.cloudinary.com/dmgeldhs1/image/upload/v1559895272/m532uloapiqjulxmt8jy.jpg');
     background-blend-mode: lighten;
+    background-position: top center;
 }
 .img-logo{
     margin-top:10px;
