@@ -1,3 +1,8 @@
+const express = require("express");
+const app = express();
+const expressEdge= require("express-edge");
+app.use(expressEdge);
+
 const AllData = require("../data");
 var allcars = [];
 function getAllCars(data){
@@ -30,15 +35,20 @@ function getAllOrders(data){
 getAllOrders(allcars);
 exports.purchaseOrder = (req,res)=>{
    
-  
+ 
     var body = req.body;
-
+    
+   
     if(!body.amount||!body.buyer){
-        res.status(400).send("The data that you entered is not correct!")
+        const error = {
+            "status":400,
+            "error": "Please enter all the data"
+        }
+        res.json(error);
     }
     
     // Find if the user exist
-    var userF = AllData.find(elt=>elt.user.id == body.buyer);
+    var userF = AllData.find(elt=>elt.user._id == body.buyer);
  
     // Get all the cars of the user
     var userCars = userF.user.cars;
@@ -115,4 +125,3 @@ exports.updateOrder = (req,res)=>{
 
 }
 
-exports.getorder
