@@ -1,3 +1,33 @@
+const AllData = require("../data");
+var allcars = [];
+function getAllCars(data){
+
+  for(var i=0;i<data.length;i++){
+      var cars = data[i].user.cars;
+      allcars.push(cars);
+  }
+  // allcars = allcars.flat(1);
+  var merged = [].concat.apply([], allcars);
+   allcars = merged;
+}
+
+getAllCars(AllData);
+
+
+
+var allorders =[];
+function getAllOrders(data){
+
+  for(var i=0; i<data.length;i++){
+      var order = data[i].order;
+      allorders.push(order);
+      }
+     
+}
+
+
+
+getAllOrders(allcars);
 exports.purchaseOrder = (req,res)=>{
    
   
