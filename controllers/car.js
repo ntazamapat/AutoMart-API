@@ -2,7 +2,12 @@
 const express = require("express");
 const app = express();
 const expressEdge= require("express-edge");
+const methodOverride = require("method-override");
+
+const path = require("path");
+
 app.use(expressEdge);
+app.use(methodOverride("_method"))
 
 
 
@@ -82,7 +87,11 @@ exports.postanAd=(req,res)=>{
    
     if(!body.email||!body.price||!body.state||!body.model)
     {
-        res.status(404).send("The data that you have entered is not correct");
+        const error ={
+            "status":404,
+            "error":"The data that you have entered is not correct"
+        }
+        res.json(error);
         return
     }
 
@@ -109,8 +118,13 @@ exports.postanAd=(req,res)=>{
        return  res.json(newdata);
     }
     else{
-       return  res.status(400).send('You can not post an Ad unless you are logged in!')
+        const err ={
+            "status":400,
+            "error": "You need to be logged in to be able to post an Ad!"
+        }
+        res.json(err);
     }
+    
         
       });
 
@@ -202,6 +216,7 @@ exports.getCar=(req,res)=>{
 exports.getCarStatus = (req,res)=>{
     var status = req.query.status;
     var availableCars = allcars.filter(elt =>elt.status===status);
+    console.log(availableCars);
     if(!availableCars)
     {
         res.status(404).send("There is no available car ")
@@ -232,8 +247,8 @@ exports.getCarStatusId = (req,res)=>{
         "data":{
             "id":carId,
             "email":user.email,
-            "created_on":newcar.created_on,
-            "manufacturer":newcar.manufacturer,
+            "created_on":newC.created_on,
+            "manufacturer":newC.manufacturer,
             "model":newcar.model,
             "price":newcar.price,
             "state":newcar.state,
@@ -280,7 +295,7 @@ exports.getCarIDPrice = (req,res)=>{
 
 exports.deleteCar = (req,res)=>{
     var carId= req.params.id;
-    var car = allcars.find(elt=>elt.id === parseIn(carId));
+    var car = allcars.find(elt=>elt.id === parseInt(carId));
     if(!car){
         res.status(400).send("the car is not available!");
         return;
@@ -295,6 +310,13 @@ exports.deleteCar = (req,res)=>{
         "data":"Car Add successfully deleted"
             }
     
+}
+
+exports.getIDforEdit = (req,res) =>{
+    const carId= req.params.id;
+    const car = allcars.find(elt=>elt.id === parseInt(carId));
+    res.render("sellEdit",{car})
+
 }
 
 

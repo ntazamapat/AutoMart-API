@@ -1,8 +1,12 @@
 const express =  require("express");
 const expressEdge= require("express-edge");
+// Router nous permet d'exporter les endpoints vers index.js( example :app.get....)
+// C'est pour mieux organiser notre  projet
 const router = express.Router();
 const bodyParser = require("body-parser");
+const methodOverride = require("method-override");
 
+//  connect to the folder of controllers to get all the (req,res ) functions
 
 const CarsController = require("../controllers/car")
 
@@ -39,7 +43,10 @@ router.use(bodyParser.urlencoded({extended:true}));
 
 router.use(expressEdge);
 
+router.use(methodOverride("_method"));
+
 router.get('/api/v1',CarsController.getHomepage);
+
 
 router.post('/api/v1/car',upload.single('image'),CarsController.postanAd)
 
@@ -53,7 +60,9 @@ router.get('/api/v1/car/',CarsController.getAllCars);
 
 router.get('/api/v1/car/:id',CarsController.getCar);
 
-router.patch('api/v1/car/:id/:status',CarsController.getCarStatusId);
+router.get('/api/v1/car/:id/edit' ,CarsController.getIDforEdit)
+
+router.patch('api/v1/car/:id/status',CarsController.getCarStatusId);
 
 router.patch('/api/v1/car/:id/price',CarsController.getCarIDPrice);
 

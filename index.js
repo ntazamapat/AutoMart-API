@@ -1,6 +1,5 @@
 const express = require("express");
 
-const path = require("path");
 
 const expressEdge= require("express-edge");
 
@@ -63,6 +62,8 @@ app.get('/api/v1/admin',(req,res)=>{
 app.get('/api/v1/sell',(req,res)=>{
     res.render("sell");
 })
+
+
 
 app.get('/api/v1/catalog',(req,res)=>{
     res.render("purchase");

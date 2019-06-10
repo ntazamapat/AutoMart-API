@@ -35,8 +35,9 @@ function getAllOrders(data){
 getAllOrders(allcars);
 exports.purchaseOrder = (req,res)=>{
    
- 
+   
     var body = req.body;
+    
     
    
     if(!body.amount||!body.buyer){
@@ -49,35 +50,57 @@ exports.purchaseOrder = (req,res)=>{
     
     // Find if the user exist
     var userF = AllData.find(elt=>elt.user._id == body.buyer);
+   
+    // if(!userF){
+    //     const error={
+    //         "status":404,
+    //         "error":"There is no user with such ID"
+    //     }
+    //     res.json(error);
+    //     return;
+    // }
  
     // Get all the cars of the user
     var userCars = userF.user.cars;
-     // Find if the user has the car_id in his cars
-    var isCar= userCars.find(elt=>elt.id ==body.car_id);
+    var car = allcars.find(elt=>elt.id==body.car_id)
     
-    if(userF){
-        var car={
+     // Find if the user has the car_id in his cars
+    // var isCar= userCars.find(elt=>elt.id ==body.car_id);
+    // if(!isCar){
+    //     const err ={
+    //         "status":404,
+    //         "error":"There is no car with the entered Id"
+    //     }
+    //     res.json(err);
+    // }
+    
+    if(car){
+        const carUp={
             "id":allorders.length+1,
-            "car_id":isCar.id,
-            "created_on":isCar.created_on,
-            "status":isCar.status,
-            "price":isCar.price,
+            "car_id":car.id,
+            "created_on":car.created_on,
+            "status":car.status,
+            "price":car.price,
             "price_offer":body.amount
         }
-        isCar.order = {
+        carUp.order = {
           "id":allorders.length+1,
-          "car_id":isCar.id,
+          "car_id":car .id,
           "buyer":userF.user.id,
           
         }
-        allorders.push(isCar.order);
+        allorders.push(carUp.order);
         var data={
             "status":200,
-            "data":car
+            "data":carUp
         }
         res.send(data)
     }else{
-        res.status(400).send("Your order is not valid!")
+        const err ={
+                    "status":404,
+                    "error":"Your order is not valid!"
+                }
+                res.json(err);
     }
 
 
