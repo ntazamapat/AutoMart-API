@@ -1,7 +1,7 @@
 @layout('layouts.app')
 
 @section('content')
-{{car}}
+
 <div class="col-1">
     <form action="/api/v1/car/{{car.id}}/status?_method=PATCH" method="POST">
             <fieldset>
