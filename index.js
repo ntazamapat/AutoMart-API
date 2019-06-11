@@ -4,6 +4,7 @@ const path = require("path");
 const expressEdge= require("express-edge");
 
 const bodyParser = require("body-parser");
+const methodOverride = require("method-override");
 
 // Routes
 
@@ -22,6 +23,7 @@ app.use(UserRoute);
 
 app.use(OrderRoute);
 
+app.use(methodOverride("_method"));
 
 
 const AllData = require("./data");

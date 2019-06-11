@@ -134,15 +134,16 @@ exports.postanAd=(req,res)=>{
 }
 
 exports.getAllCars = (req,res)=>{
-    
-    const ads = allcars;
-    const response={
-        "status":200,
-        "data":allcars
-    }
+    getAllCars(AllData);
 
-    console.log(ads); 
-    res.render("catalog",{ads:ads})
+    res.json(allcars)
+    // const response={
+    //     "status":200,
+    //     "data":allcars
+    // }
+
+    // console.log(ads); 
+    // res.render("catalog",{ads:ads})
 }
 
 exports.getCar=(req,res)=>{

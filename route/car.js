@@ -47,27 +47,29 @@ router.use(methodOverride("_method"));
 
 router.get('/api/v1',CarsController.getHomepage);
 
+router.get('/api/v1/car',CarsController.getAllCars);
+
 
 router.post('/api/v1/car',upload.single('image'),CarsController.postanAd)
 
 
-router.get('/api/v1/car',CarsController.getCarStatus);
+router.get('/api/v1/car/',CarsController.getCarStatus);
 
 router.get('/api/v1/car/',CarsController.getcarStatusPrice);
 
-router.get('/api/v1/car/',CarsController.getAllCars);
+
 
 
 router.get('/api/v1/car/:id',CarsController.getCar);
 
 router.get('/api/v1/car/:id/edit' ,CarsController.getIDforEdit)
 
-router.patch('api/v1/car/:id/status',CarsController.getCarStatusId);
+router.put('api/v1/car/:id/status',CarsController.getCarStatusId);
 
 router.patch('/api/v1/car/:id/price',CarsController.getCarIDPrice);
 
 router.delete('/api/v1/car/:id',CarsController.deleteCar)
 
 
-
+// Export the routes to the index main file
 module.exports = router;
