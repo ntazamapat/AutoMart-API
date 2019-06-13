@@ -27,11 +27,12 @@ Restful Node Car Selling Application
 
 ### Setup
 
-- You can use nodemon  to run the code
 
 > now install npm dependecies packages
 
 $ npm install
+
+- You can use nodemon  to run the code
 
 ### Features
 
