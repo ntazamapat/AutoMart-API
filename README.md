@@ -53,8 +53,8 @@ Below the functional endpoints API
 | /api/v1/car/:id/status | PATCH | User mark the car as sold |
 | /api/v1/car/:id | GET | User view the specific car |
 | /api/v1/car/available | GET | User view the available cars |
-| /api/v1/car/available/range | GET | User view the available cars with price range|
-| /api/v1/car/all | GET | User view all cars whether sold or unsold |	
+| /api/v1/car?status=available&min_price=&max_price= | GET | User view the available cars with price range|
+| /api/v1/car | GET | User view all cars whether sold or unsold |	
 | /api/v1/car/:id | DELETE | Admin can delete a specific car |
 
 ```
