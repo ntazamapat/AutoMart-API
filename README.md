@@ -60,8 +60,7 @@ Below the functional endpoints API
 
 ### Usage 
 
-You can test the differents endpoints by clicking on the link of the UI
-You might also use PostMan
+You can test the differents endpoints by clicking on the link of the UI or you can use POSTMAN
 
 
 ### Author
