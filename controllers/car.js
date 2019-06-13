@@ -134,16 +134,68 @@ exports.postanAd=(req,res)=>{
 }
 
 exports.getAllCars = (req,res)=>{
-    getAllCars(AllData);
+    // getAllCars(AllData);
+    // When searching for query string status
+    if(req.query.min_price || req.query.min_price )   
+            {
+                
+                const minPrice = req.query.min_price;
+                const maxPrice =req.query.max_price;
+              
+                var availableCars = allcars.filter(elt =>elt.status=="available");
+                
+                const priceRangeCars = availableCars.filter(elt =>{
+                    if(elt.price>parseInt(minPrice) && elt.price<parseInt(maxPrice))
+                    {
+                        return elt
+                    }
+                });
+                if(priceRangeCars.length>0)
+                {
+                    var response = {
+                        "status":200,
+                        "data":priceRangeCars
+                    }
+                    res.json(response)
+                }
+                else{
+                    var error = {
+                        "status":400,
+                        "error":"There are no cars in the specified price range"
+                    }
+                    res.json(error)
+
+                }
+                
+               
+            }
+            else if(req.query.status){
+                var status = req.query.status;
+                var availableCars = allcars.filter(elt =>elt.status===status);
+              
+                if(!availableCars)
+                {
+                    const err ={
+                        "data":404,
+                        "error":"There is no available car"
+                    }
+                    res.json(err);
+                    return;
+                }
+             
+                
+            
+                var response = {
+                    "status":200,
+                    "data":availableCars
+                }
+            
+                res.json(response);   
+            }
+            
 
     res.json(allcars)
-    // const response={
-    //     "status":200,
-    //     "data":allcars
-    // }
-
-    // console.log(ads); 
-    // res.render("catalog",{ads:ads})
+   
 }
 
 exports.getCar=(req,res)=>{
@@ -163,97 +215,46 @@ exports.getCar=(req,res)=>{
 
 
 }
- exports.getcarStatusPrice = (req,res)=>{
-    var status = req.query.status;
-    var minPrice = req.query.min_price;
-    var maxPrice =req.query.max_price;
-
-    if(parseInt(minPrice) == 0||parseInt(maxPrice) == 0)
-    {
-        var availableCars = allcars.filter(elt =>elt.status===status);
-    if(!availableCars)
-    {
-        res.status(404).send("There is no available car ")
-    }
-
-    var response = {
-        "status":200,
-        "data":availableCars
-    }
-
-    res.send(response);
-    return;
 
 
-    }
 
-    var carsAvailable = allcars.filter(elt=> elt.status ===status);
-    res.send(carsAvailable);
-     
-    if(carsAvailable.length == 0)
-    {
-        res.status(404).send("there is no available car");
-        return;
-    }
-    var carPriRg = carsAvailable.filter(elt=>{ 
-        if(elt.price>parseInt(minPrice)&&elt.price<parseInt(maxPrice)){
-            return elt;
-        }
-    })
+exports.updateCarStatusId = (req,res)=>{
     
-    if(!carPriRg){
-        res.status(404).send("there is no available car with the specified price range");
-        return;
-    }
-    var response={
-        "status":200,
-        "data":carPriRg
-    };
-
-    res.send(response);
-
-}
-
-exports.getCarStatus = (req,res)=>{
-    var status = req.query.status;
-    var availableCars = allcars.filter(elt =>elt.status===status);
-    console.log(availableCars);
-    if(!availableCars)
-    {
-        res.status(404).send("There is no available car ")
-    }
-
-    var response = {
-        "status":200,
-        "data":availableCars
-    }
-
-    res.send(response);
-}
-
-exports.getCarStatusId = (req,res)=>{
-
+  
     var carId= req.params.id;
-    var status=req.params.status;
-    var car = allcars.find(elt=>elt.id === parseIn(carId));
-    if(!car){
-        res.status(400).send("the car is not available!");
-        return;
+    
+    
+    var car = allcars.find(elt=>elt.id === parseInt(carId));
+    var user = AllData.find(elt=>elt.user._id == car.owner)
+    if(user.email !== AllData[0].session)
+    {
+        res.send("you can not update this data !")
     }
-    var user = AllData.find(elt=>elt.user.id === car.owner);
-    var newC = user.cars.find(elt.id === parseInt(carId));
-    newC.status=status;
+    if(!car || !user){
+        const err ={
+            "status":400,
+            "error":"Please specify your user ID or Car ID"
+        }
+        res.json(err);
+        return
+    }
+    
+    
+    const newC = user.user.cars.find(elt=>elt.id ==parseInt(carId));
+   
+    newC.status="sold";
+    
     var response = {
         "status":200,
         "data":{
             "id":carId,
             "email":user.email,
-            "created_on":newC.created_on,
+            "created_on":Date(),
             "manufacturer":newC.manufacturer,
-            "model":newcar.model,
-            "price":newcar.price,
-            "state":newcar.state,
-            "status":newcar.status
+            "model":newC.model,
+            "price":newC.price,
+            "state":newC.state,
+            "status":newC.status
 
         }
 
@@ -263,53 +264,78 @@ exports.getCarStatusId = (req,res)=>{
 
 }
 
-exports.getCarIDPrice = (req,res)=>{
+exports.updateCarIDPrice = (req,res)=>{
+  
     var carId= req.params.id;
-    var price=req.params.price;
-    var car = allcars.find(elt=>elt.id === parseIn(carId));
+    var price=req.body.price;
+   
+    var car = allcars.find(elt=>elt.id === parseInt(carId));
+    var user = AllData.find(elt=>elt.user._id == car.owner);
     if(!car){
-        res.status(400).send("the car is not available!");
+        const error ={
+            "status":400,
+            "error":"You can not update the price"
+        }
+        res.json(error);
         return;
     }
-    var user = AllData.find(elt=>elt.user.id === car.owner);
-    var newC = user.cars.find(elt.id === parseInt(carId));
+    const newC = user.user.cars.find(elt=>elt.id ==parseInt(carId));
+   
+   
     newC.price=price;
+    
     var response = {
         "status":200,
         "data":{
             "id":carId,
             "email":user.email,
-            "created_on":newcar.created_on,
-            "manufacturer":newcar.manufacturer,
-            "model":newcar.model,
-            "price":newcar.price,
-            "state":newcar.state,
-            "status":newcar.status
+            "created_on":Date(),
+            "manufacturer":newC.manufacturer,
+            "model":newC.model,
+            "price":newC.price,
+            "state":newC.state,
+            "status":newC.status
 
         }
 
     }
-    res.send(response);
+    res.json(response);
+    
+
 
 }
 
 
 exports.deleteCar = (req,res)=>{
+    
     var carId= req.params.id;
     var car = allcars.find(elt=>elt.id === parseInt(carId));
     if(!car){
-        res.status(400).send("the car is not available!");
+        var error={
+             "status":404,
+             "error":"The car can not be delete"
+        }
+        res.json(error);
         return;
     }
-    var user = AllData.find(elt=>elt.user.id === car.owner);
-    var newC = user.cars.find(elt.id === parseInt(carId));
-    var indexCar = user.cars.indexOf(newCar);
-    user.cars =user.cars.splice(indexCar,1);
+    var user = AllData.find(elt=>elt.user._id === car.owner);
+    
+    
+    var newC = user.user.cars.find(elt =>elt.id == parseInt(carId));
+    var carArray = user.user.cars;
+    
+    var indexCar = carArray.findIndex(elt=>elt.id ==newC.id);
+    
+    carArray.splice(indexCar,1);
+    allcars.splice(indexCar,1);
+    res.send(allcars);
+    res.send(carArray);
 
     var response ={
         "status":200,
-        "data":"Car Add successfully deleted"
+        "data":"Car Ad successfully deleted"
             }
+     res.json(response);     
     
 }
 
@@ -317,6 +343,12 @@ exports.getIDforEdit = (req,res) =>{
     const carId= req.params.id;
     const car = allcars.find(elt=>elt.id === parseInt(carId));
     res.render("sellEdit",{car})
+
+}
+exports.getIDforEditP = (req,res) =>{
+    const carId= req.params.id;
+    const car = allcars.find(elt=>elt.id === parseInt(carId));
+    res.render("sellEditP",{car})
 
 }
 

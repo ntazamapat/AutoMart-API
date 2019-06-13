@@ -45,6 +45,10 @@ router.use(expressEdge);
 
 router.use(methodOverride("_method"));
 
+
+
+// Creating routes
+
 router.get('/api/v1',CarsController.getHomepage);
 
 router.get('/api/v1/car',CarsController.getAllCars);
@@ -52,21 +56,15 @@ router.get('/api/v1/car',CarsController.getAllCars);
 
 router.post('/api/v1/car',upload.single('image'),CarsController.postanAd)
 
-
-router.get('/api/v1/car/',CarsController.getCarStatus);
-
-router.get('/api/v1/car/',CarsController.getcarStatusPrice);
-
-
-
-
 router.get('/api/v1/car/:id',CarsController.getCar);
 
 router.get('/api/v1/car/:id/edit' ,CarsController.getIDforEdit)
 
-router.put('api/v1/car/:id/status',CarsController.getCarStatusId);
+router.get('/api/v1/car/:id/editPrice' ,CarsController.getIDforEditP)
 
-router.patch('/api/v1/car/:id/price',CarsController.getCarIDPrice);
+router.patch('/api/v1/car/:id/status',CarsController.updateCarStatusId);
+
+router.patch('/api/v1/car/:id/price',CarsController.updateCarIDPrice);
 
 router.delete('/api/v1/car/:id',CarsController.deleteCar)
 

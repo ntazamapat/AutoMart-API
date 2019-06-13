@@ -1,0 +1,31 @@
+@layout('layouts.app')
+
+@section('content')
+
+<div>
+
+        <div class="signup__form ">
+           
+            
+            <div class="img-logo">
+                 <img  src="/images/logo2.png" alt="AutoMart-logo" >  
+           </div>
+            
+            <form class="formcl"  action="/api/v1/auth/signup" method="POST">
+ 
+            <input type="text" placeholder="FirstName" name="first_name">
+            <input type="text" placeholder="Lastname" name="last_name">
+            <input type="email" placeholder="Email" name="email">
+            <input type="password" placeholder="Password">
+ 
+            <button class="signup__form__submit" type="submit" > Sign up</button>
+ 
+             </form>
+        </div>
+ 
+       
+        
+    </div>
+ 
+
+@endsection

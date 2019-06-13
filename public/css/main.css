@@ -17,16 +17,47 @@ html{
     height:200px
 }
 
+
+button.icon{
+    border:none!important;
+    background:white!important.
+    
+}
+button.icon:hover{
+    
+    cursor:pointer;
+    transform: scale(1.5);
+    transition: 4ms
+}
+
 .btn{
     display:block;
     width:80%;
     height:40px;
-    background: linear-gradient(to left, rgb(253, 116, 108), rgb(255, 144, 104));
+    /* background: linear-gradient(to left, rgb(253, 116, 108), rgb(255, 144, 104)); */
+    background-color: #6B818C;
+    color:#DDDBF1!important;
     text-align:center;
     font-size:20px;
     margin:20px auto;
     transition:.6s;
     
+}
+.btn-fr{
+   
+    height:50px;
+    width:100px;
+    color:#094074;
+    background-color: #5ADBFF;
+    margin-right: 0 auto;
+    border-color:none;
+    border-radius:5px;
+}
+.fas.fa-trash-alt{
+    font-size:20px;
+    color: #FF3366;
+    background-color: white
+   
 }
 
 .btn-tb{
@@ -41,7 +72,7 @@ html{
 .btn-p{
  display:inline-block;
  width:30%;
- float:right;
+ float:right
 }
 .confirm{
     width:85%;
@@ -56,13 +87,20 @@ html{
     margin-left:5px;
 
 }
+.logoF{
+    
+    margin-right:auto;
+    display:inline-block;
+   
+}
 
 .d-admin table{
     width:80%;
 }
 
 .btn:hover{
-    background:orangered;
+    background:#003459;
+    color:whitesmoke !important;
     
 }
 .btn--sm{
@@ -74,10 +112,23 @@ html{
     color:#235789;
     font-weight: bold;
 }
+.btn--sold{
+    background-color:#8C5E58;
+}
+.btn--sold:hover{
+    background-color:#D33E43
+}
+.btn--edit{
+    background-color:#067BC2
+}
+.btn--edit:hover{
+    background-color:#68B684
+}
 
 btn--sm:hover{
     border:1px solid #235789;
 }
+
 
 .user-type [class^="nav"]{
 border-left:1px solid orangered;
@@ -107,7 +158,8 @@ line-height:40px;}
 .nav__logo{
     margin:10px;
     float:left;
-    width:100px;
+    width:300px;
+   
     font-size:20px;
  
 }
@@ -144,9 +196,10 @@ line-height:40px;}
     background-size:cover;
 }
 .img-logo{
-    margin-top:10px;
-    padding:15px;
-    height:200px;
+    margin-top:50px;
+    padding:50px;
+  
+    height:300px;
 }
 
 
@@ -216,8 +269,8 @@ line-height:40px;}
 }
 
 .footer{
-   margin-top:300px; 
-   background-color:#F1D302;
+   margin-top:100px; 
+   background-color:#094074;
    height:200px;
 }
 
@@ -228,16 +281,14 @@ line-height:40px;}
    Create a Modal   */
 
   .signup{
-      width:100vw;
-      height:100vh;
-      position: absolute;
+      
+      
       background : rgba(82, 66, 66, 0.7);
-      top:0;
+      
       display:none;
       scroll-behavior: initial;
       box-shadow: 0 0 20px rgba(0,0,0,0.2);
-      overflow:hidden;
-
+      
       
 
   }  
@@ -258,16 +309,29 @@ line-height:40px;}
   .signup__form{
      width: 400px;
      height:500px;
-     background:#8C5E58;
      margin: 0 auto;
-     position:relative;
-     top:50%;
-     transform:translateY(-250px);
+     background-color:  #D33E43;
+     /* top:50%;
+     transform:translateY(-250px); */
      text-align:center;
 
      
 
   }
+
+  .formcl{
+     box-sizing: border-box
+    width:100%;
+    position:relative;
+    top:50%;
+    padding:20px;
+    margin-right:0 auto; 
+    transform:translateY(-500px);
+    
+
+  
+
+}
 
   .signup__form__close{
       position:absolute;
@@ -280,24 +344,30 @@ line-height:40px;}
   }
 
   .signup__form input{
-      display:block;
-      font-size:16px;
-      margin:15px auto;
-      width:200px;
-      height:30px;
-      border-radius:2px;
-      border: 1px solid #B0B0B0;
-      
+    
+    width:100%;
+    height:30px;
+    border:none;
+    border-bottom: 1px solid white ;
+    background-color:  #D33E43;
+    color:#067BC2
+
 
   }
 
   .signup__form__submit{
         display:block;
-        width:100px;
-        height:30px;
-      background-color:#B0B0B0; 
+         width:100%;
+        height:30px; 
+      background-color:#067BC2; 
       margin: 20px auto;
       border-radius:2px;
+      border-style: none;
+      color:white
+     }
+    
+     .signup__form__submit:placeholder{
+         color:white
      }
  
 
@@ -322,16 +392,9 @@ Sell car css */
     color:#235789
 }
 
-.formcl{
-    
-    width:100%;
-    position:relative;
-    top:50%;
-    
-    
-    transform: translateY(-300px);
 
-}
+
+
 fieldset{
     width:50%;
     box-sizing: padding-box;
@@ -414,6 +477,8 @@ h1{
     width:40%;
 
 }
+
+
 .col-1-of-2 img{
     max-width:100%;
 }
@@ -470,14 +535,26 @@ th , td{
  tr:nth-child(even){
      background-color:#EAEAEB;
  }
-      
+ 
+ ul {
+     list-style: none;
+     background-color:#094074;
+     color:whitesmoke;
+ }
+ li{
+    
+     margin:10px
+ }
+ 
  
 /* Searching in the table */
 
  .row-search{
-    background:linear-gradient(to left,#235789,#69DDFF);
+    padding:10px;
+    background-color:#9B7874;
     width:90%;
     margin:70px auto;
+    color:white;
 }
 .row-search::after{
     content:"";
@@ -494,12 +571,12 @@ th , td{
 }
 .row-search__column{
     display:block;
-    width:25%;
+    width:50%;
     float:left
 }
 
 hr{
-    color: rgba(241,211,2,0.3)
+    color: #F1D302;
 
 }
 .label-search{
@@ -511,13 +588,32 @@ hr{
 
 }
 select{
-    color:orangered !important;
+    color:#235789!important;
+    
+}
+select option{
+    font-weight: 2000;
 }
 
 h2{
     display:inline-block;
     width:70%;
 }
+
+.col-1-of-4__footer{
+    width:calc((50% - 60px));
+    background-color: #094074;
+    float:left;
+    margin-right: 0px !important;   
+   
+ }
+
+ .ct-hd{
+     color:#D33E43;
+     font-size:20px;
+     weight:200;
+ }
+ 
 /*
 0-600px: Phone
 600-900px: Tablet Landscape
@@ -559,6 +655,7 @@ h2{
           display:block;
           margin:0 auto;
         }
+        
         .col-1-of-4{
             width:calc((50% - 60px));
             background-color: #FDFFFC;
@@ -570,7 +667,19 @@ h2{
          .col-1-of-4:nth-child(odd){
            
             margin-right:100px !important;
-         } 
+         }
+         
+         .col-1-of-4__footer{
+            width:calc((50% - 60px));
+            background-color: #094074;
+            float:left;
+            margin-right: 0px !important;   
+           
+         }
+
+
+         
+
          
           
 
@@ -580,6 +689,11 @@ h2{
 
 
 @media screen and (max-width:600px){
+
+    .row-search__column{
+        width:100% !important;
+        display:block
+    }
 
     table{
         width:30%;

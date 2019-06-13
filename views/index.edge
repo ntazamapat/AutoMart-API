@@ -6,35 +6,16 @@
  
     </div>
 
-    <!-- <div class="row">
-            <div class="col-1-of-2">
-                 col 1 of 2
-            </div>
-            <div class="col-1-of-2">
-             col 1 of 2
-        </div>
-     
-        </div>
-   <div class="row ">
-    <div class="col-1-of-3">
-         col 1 of 3
-    </div>
-    <div class="col-1-of-3">
-        col 1 of 3
-   </div>
-   <div class="col-1-of-3">
-    col 1 of 3
-</div> -->
-
-<!-- </div> -->
+   
 
 <div class="row-search">
+        <h2>SEARCH FOR CAR</h2>
+        <hr> 
+    <div  class="row-search__column">
         <form action="/api/v1/car" method="GET">
            
-      <!-- <input type="text" placeholder="Search Car..">    -->
-      <h2>SEARCH FOR CAR</h2>
-      <hr>
-      <span class="row-search__column">
+     
+      <span>
         
                   <label for="make">Status</label>
                   <select name="status" > 
@@ -43,40 +24,45 @@
                       <option value="sold">sold</option>
                   </select>              
       </span>
+      <button type="Submit">Find</button>
+
+    </form>
+
+    </div>
+    <div class="row-search__column">
+    <form action="/api/v1/car" method="GET">
       
-      <span class="row-search__column">
-              <div class="label-search">
+              <span>
+                    <label for="make">Status</label>
+                    <select name="status" > 
+                        <option value="available">available</option>
+                    </select>      
                       <label for="price">Minimum price</label>
-                      <select name="min_price"> 
+                      <select class="min_price" name="min_price"> 
                           <option value="0">0</option>
-                          <option value="100">1000</option>
-                          <option value="500">2000</option>
-                          <option value="1000">4000</option>
-                          <option value="2000">9000</option>
+                          <option value="1000">1000</option>
+                          <option value="2000">2000</option>
+                          <option value="4000">4000</option>
+                          <option value="9000">9000</option>
                       </select>            
-              </div>
+              </span>
           
-              <div class="label-search">
+              <span >
                   
                       <label for="price">Maximum price</label>
-                      <select name="max_price">
+                      <select class="max_price" name="max_price">
                              <option value="0">0 </option> 
                             <option value="100">1000</option>
-                            <option value="500">2000</option>
-                            <option value="1000">4000</option>
-                            <option value="2000">9000</option>
-                      </select>            
-              </div>
-          </span> 
-             
+                            <option value="2000">2000</option>
+                            <option value="4000">4000</option>
+                            <option value="9000">9000</option>
+                      </select> 
+                                
+              </span>
+              <button type="Submit">Find </button>   
             
-          
-          
-      <span class=""> <input type="submit"></span>
-          
-      
       </form>
-      
+      </div>
           
       
       
@@ -89,51 +75,132 @@
 
 
    <div class="row">
+       @if(cars[0])
        <div class="col-1-of-4"><img class="img-catalog" src="{{cars[0].image}}" alt="">
-        <a href="/api/v1/car/{{cars[0].id}}" class="btn  btn--sm btn--view">View</a> <a href="/api/v1/car/{{cars[0].id}}/edit" class="btn btn--sm btn--buy">Edit</a>  </div>
+        <a href="/api/v1/car/{{cars[0].id}}" class="btn  btn--sm btn--view">View</a> <a href="/api/v1/car/{{cars[0].id}}/edit" class="btn btn--sm btn--sold">Sold</a> <a href="/api/v1/car/{{cars[0].id}}/editPrice" class="btn btn--sm btn--edit">Edit</a> 
+       <form action="/api/v1/car/{{cars[0].id}}?_method=DELETE" method="POST">
+       <button class="icon" type="submit"><i class="fas fa-trash-alt"></i></button> 
+    </form>
+    
+    </div>
+    @endif
+
+    @if(cars[1])
        <div class="col-1-of-4"><img class="img-catalog" src="{{cars[1].image}}" alt="">
-        <a href="/api/v1/car/{{cars[1].id}}" class="btn  btn--sm btn--view">View</a> <a href="/api/v1/car/{{cars[1].id}}/edit" class="btn btn--sm btn--buy">Edit</a></div>
+        <a href="/api/v1/car/{{cars[1].id}}" class="btn  btn--sm btn--view">View</a> <a href="/api/v1/car/{{cars[1].id}}/edit" class="btn btn--sm btn--sold">Sold</a> <a href="/api/v1/car/{{cars[1].id}}/editPrice" class="btn btn--sm btn--edit">Edit</a>        
+                <form action="/api/v1/car/{{cars[1].id}}?_method=DELETE" method="POST">
+            <button class="icon" type="submit"><i class="fas fa-trash-alt"></i></button> 
+         </form>
+    </div>
+    @endif
+
+    @if(cars[2])
        <div class="col-1-of-4"><img class="img-catalog" src="{{cars[2].image}}" alt="">
-        <a href="/api/v1/car/{{cars[2].id}}" class="btn btn--sm btn--view">View</a> <a href="/api/v1/car/{{cars[2].id}}/edit" class="btn btn--sm btn--buy">Edit</a></div>
+        <a href="/api/v1/car/{{cars[2].id}}" class="btn  btn--sm btn--view">View</a> <a href="/api/v1/car/{{cars[2].id}}/edit" class="btn btn--sm btn--sold">Sold</a> <a href="/api/v1/car/{{cars[2].id}}/editPrice" class="btn btn--sm btn--edit">Edit</a> 
+        <form action="/api/v1/car/{{cars[2].id}}?_method=DELETE" method="POST">
+            <button class="icon" type="submit"><i class="fas fa-trash-alt"></i></button> 
+         </form>
+    </div>
+    @endif
+
+    @if(cars[3])
        <div class="col-1-of-4"><img class="img-catalog" src="{{cars[3].image}}" alt="">
-        <a href="/api/v1/car/{{cars[3].id}}" class="btn btn--sm btn--view">View</a> <a href="/api/v1/car/{{cars[3].id}}/edit" class="btn btn--sm  btn--buy">Edit</a></div>
+        <a href="/api/v1/car/{{cars[3].id}}" class="btn  btn--sm btn--view">View</a> <a href="/api/v1/car/{{cars[3].id}}/edit" class="btn btn--sm btn--sold">Sold</a> <a href="/api/v1/car/{{cars[3].id}}/editPrice" class="btn btn--sm btn--edit">Edit</a>    
+        <form action="/api/v1/car/{{cars[3].id}}?_method=DELETE" method="POST">
+            <button  type="submit"><i class="fas fa-trash-alt"></i></button> 
+         </form>
+    </div>
    </div>
+   @endif
 
    <div class="row">
+        @if(cars[4])
         <div class="col-1-of-4"><img class="img-catalog" src="{{cars[4].image}}" alt="">
-            <a href="view.html" class="btn  btn--sm btn--view">View</a> <a href="/api/v1/car/{{cars[4].id}}/edit" class="btn btn--sm btn--buy">Edit</a> </div>
+            <a href="/api/v1/car/{{cars[4].id}}" class="btn  btn--sm btn--view">View</a> <a href="/api/v1/car/{{cars[4].id}}/edit" class="btn btn--sm btn--sold">Sold</a> <a href="/api/v1/car/{{cars[4].id}}/editPrice" class="btn btn--sm btn--edit">Edit</a>  
+            <form action="/api/v1/car/{{cars[4].id}}?_method=DELETE" method="POST">
+                <button class="icon" type="submit"><i class="fas fa-trash-alt"></i></button> 
+             </form>
+        </div>
+        @endif
+
+    @if(cars[5])
         <div class="col-1-of-4"><img class="img-catalog" src="{{cars[5].image}}" alt="">
-            <a href="view.html" class="btn  btn--sm btn--view">View</a> <a href="/api/v1/car/{{cars[5].id}}/edit" class="btn btn--sm btn--buy">Edit</a></div>
+            <a href="/api/v1/car/{{cars[5].id}}" class="btn  btn--sm btn--view">View</a> <a href="/api/v1/car/{{cars[5].id}}/edit" class="btn btn--sm btn--sold">Sold</a> <a href="/api/v1/car/{{cars[5].id}}/editPrice" class="btn btn--sm btn--edit">Edit</a> 
+            <form action="/api/v1/car/{{cars[5].id}}?_method=DELETE" method="POST">
+                <button class="icon" type="submit"><i class="fas fa-trash-alt"></i></button> 
+             </form>
+        </div>
+        @endif
+
+    @if(cars[6])
         <div class="col-1-of-4"><img class="img-catalog" src="{{cars[6].image}}" alt="">
-            <a href="view.html" class="btn btn--sm btn--view">View</a> <a href="/api/v1/car/{{cars[6].id}}/edit" class="btn btn--sm btn--buy">Edit</a></div>
+            <a href="/api/v1/car/{{cars[6].id}}" class="btn  btn--sm btn--view">View</a> <a href="/api/v1/car/{{cars[6].id}}/edit" class="btn btn--sm btn--sold">Sold</a> <a href="/api/v1/car/{{cars[6].id}}/editPrice" class="btn btn--sm btn--edit">Edit</a> 
+            <form action="/api/v1/car/{{cars[6].id}}?_method=DELETE" method="POST">
+                <button class="icon" type="submit"><i class="fas fa-trash-alt"></i></button> 
+             </form>
+        </div>
+        @endif
+
+    @if(cars[7])
         <div class="col-1-of-4"><img class="img-catalog" src="{{cars[7].image}}" alt="">
-            <a href="view.html" class="btn btn--sm btn--view">View</a> <a href="/api/v1/car/{{cars[7].id}}/edit" class="btn btn--sm  btn--buy">Edit</a></div>
+            <a href="/api/v1/car/{{cars[7].id}}" class="btn  btn--sm btn--view">View</a> <a href="/api/v1/car/{{cars[7].id}}/edit" class="btn btn--sm btn--sold">Sold</a> <a href="/api/v1/car/{{cars[7].id}}/editPrice" class="btn btn--sm btn--edit">Edit</a> 
+            <form action="/api/v1/car/{{cars[7].id}}?_method=DELETE" method="POST">
+                <button class="icon" type="submit"><i class="fas fa-trash-alt"></i></button> 
+             </form>
+        </div>
+    @endif
+ 
     </div>
 
-    <div class="row">
+    <!-- <div class="row">
+          
+            @if(cars[2])
         <div class="col-1-of-4"><img class="img-catalog" src="{{cars[2].image}}" alt="">
-            <a href="view.html" class="btn  btn--sm btn--view">View</a> <a href="buy.html" class="btn btn--sm btn--buy">Buy</a> </div>
-        <div class="col-1-of-4"><img class="img-catalog" src="{{cars[4].image}}" alt="">
-            <a href="view.html" class="btn  btn--sm btn--view">View</a> <a href="buy.html" class="btn btn--sm btn--buy">Buy</a></div>
-        <div class="col-1-of-4"><img class="img-catalog" src="{{cars[3].image}}" alt="">
-            <a href="view.html" class="btn btn--sm btn--view">View</a> <a href="buy.html" class="btn btn--sm btn--buy">Buy</a></div>
-        <div class="col-1-of-4"><img class="img-catalog" src="{{cars[7].image}}" alt="">
-            <a href="view.html" class="btn btn--sm btn--view">View</a> <a href="buy.html" class="btn btn--sm  btn--buy">Buy</a></div>
-    </div>
+            <a href="view.html" class="btn  btn--sm btn--view">View</a> <a href="buy.html" class="btn btn--sm btn--buy">Buy</a> 
+            <form action="/api/v1/car/{{cars[2].id}}?_method=DELETE" method="POST">
+                <button type="submit"><i class="fas fa-trash-alt"></i></button> 
+             </form>
+        </div>
+        @endif
 
-<!-- <div class="row">
-    <div class="col-1-of-4"><img src="https://via.placeholder.com/200" alt="car-photo"><a href="view.html" class="btn  btn--sm btn--view">View</a> <a href="buy.html" class="btn btn--sm btn--buy">Buy</a> </div>
-    <div class="col-1-of-4"><img src="https://via.placeholder.com/200" alt="car-photo"> <a href="view.html" class="btn  btn--sm btn--view">View</a> <a href="buy.html" class="btn btn--sm btn--buy">Buy</a></div>
-    <div class="col-1-of-4"><img src="https://via.placeholder.com/200" alt="car-photo"><a href="view.html" class="btn btn--sm btn--view">View</a> <a href="buy.html" class="btn btn--sm btn--buy">Buy</a></div>
-    <div class="col-1-of-4"><img src="https://via.placeholder.com/200" alt="car-photo"><a href="view.html" class="btn btn--sm btn--view">View</a> <a href="buy.html" class="btn btn--sm  btn--buy">Buy</a></div>
-</div> -->
+        @if(cars[4])
+        <div class="col-1-of-4"><img class="img-catalog" src="{{cars[4].image}}" alt="">
+            <a href="view.html" class="btn  btn--sm btn--view">View</a> <a href="buy.html" class="btn btn--sm btn--buy">Buy</a>
+            <form action="/api/v1/car/{{cars[4].id}}?_method=DELETE" method="POST">
+                <button type="submit"><i class="fas fa-trash-alt"></i></button> 
+             </form>
+        </div>
+        @endif
+
+        @if(cars[3])
+        <div class="col-1-of-4"><img class="img-catalog" src="{{cars[3].image}}" alt="">
+            <a href="view.html" class="btn btn--sm btn--view">View</a> <a href="buy.html" class="btn btn--sm btn--buy">Buy</a>
+            <form action="/api/v1/car/{{cars[0].id}}?_method=DELETE" method="POST">
+                <button type="submit"><i class="fas fa-trash-alt"></i></button> 
+             </form>
+        </div>
+        @endif
+
+         @if(cars[7])
+        <div class="col-1-of-4"><img class="img-catalog" src="{{cars[7].image}}" alt="">
+            <a href="view.html" class="btn btn--sm btn--view">View</a> <a href="buy.html" class="btn btn--sm  btn--buy">Buy</a>
+            <form action="/api/v1/car/{{cars[0].id}}?_method=DELETE" method="POST">
+                <button type="submit"><i class="fas fa-trash-alt"></i></button> 
+             </form>
+        </div>
+        @endif
+
+    
+    </div> -->
+
+
 
    <div class="signup">
 
        <div class="signup__form ">
            <div class="signup__form__close">+</div>
            <div class="img-logo">
-                <img src="https://via.placeholder.com/150" alt="AutoMart-logo" >  
+                <img  src="/images/logo2.png" alt="AutoMart-logo" >  
           </div>
            
            <form  class ="formcl" action="/api/v1/auth/signup" method="POST">
@@ -143,7 +210,7 @@
            <input type="email" placeholder="Email" name="email">
            <input type="password" placeholder="Password">
 
-           <button type="submit" > Sign up</button>
+           <button class="btn-fr" type="submit" > Sign up</button>
 
             </form>
        </div>
@@ -154,13 +221,13 @@
 
    <div class="signIn">
 
-    <div class="signup__form signin__form ">
+    <div class="signup__form  ">
         <div class="signup__form__close signin__close">+</div>
       <div class="img-logo">
             <img src="https://via.placeholder.com/150" alt="AutoMart-logo" >  
       </div>
-        
-        <form action="/api/v1/auth/signin" method="POST">
+        <h2> To register, please enter requested information</h2>
+        <form class="formcl__In"  action="/api/v1/auth/signin" method="POST">
 
        
         <input type="email" placeholder="Email" name="email">
@@ -168,7 +235,7 @@
 
         <button type="submit"> Login</button>
 
-         </form>
+         </formclass>
     </div>
 </div>
 @endsection

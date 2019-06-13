@@ -31,50 +31,41 @@ function getAllOrders(data){
 getAllOrders(allcars);
 exports.userSignIn = (req,res)=>{
 
-    var login =req.body;
+    var login =req.body.email;
+    var password=req.body.password;
+    const registeredUser =AllData.find(elt=>{
+        if(elt.user.email ==login && elt.user.password ==password ){
+            return elt;
+        }
 
-    if(!login.email||!login.password){
-        const error = {
-            "status":400,
-            "error": "Please enter password and username"
-            
-            
-        }
-        res.json(error);
-        return;
-    }
- 
-    var dUser = AllData.find((elt)=> elt.user.email == login.email)
-    if(dUser == undefined)
+        
+    })
+     
+    if(registeredUser)
     {
-        const error ={
-            "status":404,
-            "error":"The user does not exist!"
-        }
-        res.send(error);
-        return;
-    }
-      
-    else if(dUser.user.password === login.password){
-        var data ={
+         AllData[0].session = login
+        
+        const response={
             "status":200,
             "data":{
-                "id": dUser.user._id,
-                "firstName":dUser.user.firstName,
-                "lastName":dUser.user.lastName,
-                "email":dUser.user.email
+                "id":registeredUser.user._id,
+                "first_name":registeredUser.user.firstName,
+                "last_name":registeredUser.user.lastName,
+                "email":login
             }
+           
         }
-        
-        res.send(data);
-        }
-        else{
-            // Au cas ou le mot de passe ou email ne sont pas corrects
-            res.status(400).send("The password or login is not correct");
-        }
+        res.json(response)    }
+    else{
+        const error = {
+            "status":400,
+            "error":"The username or password is not correct"
 
-  
+        }
+        res.json(error);
+    }
 
+   
     }
 
 

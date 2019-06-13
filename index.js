@@ -60,6 +60,9 @@ app.get('/api/v1',(req,res)=>{
 app.get('/api/v1/admin',(req,res)=>{
     res.render('admin')
 })
+app.get('/api/v1/signup',(req,res)=>{
+    res.render("signup")
+})
 
 app.get('/api/v1/sell',(req,res)=>{
     res.render("sell");

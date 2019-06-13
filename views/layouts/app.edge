@@ -16,7 +16,7 @@
   
     <div>
     <div class="nav">
-    <div class="nav__logo"><a href="index.html"> AutoMart</a> </div>  
+    <div class="nav__logo"><a href="index.html"> <img src="/images/logo.png" alt=""></a> </div>  
             <label for="toggle">&#9776</label>
             <input type="checkbox" id="toggle">
         <div class="menu">
@@ -25,8 +25,8 @@
                     <div class="nav__sadash"><a href="/api/v1/user">User</a> </div>  
             </div>
          
-        <div class="nav__signin"><a href="http://">Sign in</a> </div>
-        <div class="nav__signup"><a href="http://">Sign up</a> </div>
+        <div class="nav__signin"><a href="/api/v1/signin">Sign in</a> </div>
+        <div class="nav__signup"><a href="/api/v1/signup">Sign up</a> </div>
         <div class="nav__sell"><a href="/api/v1/sell">Sell</a></div>
         <div class="nav__sbuy"><a href="/api/v1/catalog">Buy</a> </div>  
        
@@ -39,10 +39,38 @@
     @!section('content')
 
    <div class="footer">
+        <div class="row">
+                
+                <div class="col-1-of-4__footer"> <img src="/public/images/logo.png" alt=""></div></br>
+                <div class="col-1-of-4__footer"> 
+                    <ul>
+                        <li class="ct-hd">Contact us</li>
+                        <li class="ct-bd">Telephone. +123 37339 94944</li>
+                        <li class="ct-bd">District Rumonge N°34 Bujumbura</li>
+                        <li class="ct-bd">Buujumbura-Buruundi.</li>
+                    </ul>
+                </div>
+                <div class="col-1-of-4__footer"> 
+                        <ul>
+                            <li class="ct-hd">Connect with us on social media</li>
+                            <li class="ct-bd"><i class="fab fa-facebook"></i></li>
+                            <li class="ct-bd"><i class="fab fa-twitter"></i></li>
+                            <li class="ct-bd"><i class="fab fa-instagram"></i></li>
+                        </ul>
+                    </div>
+              
+        </div>
+
+      
+
+
+    </div>
+
 
    </div>
 
  
    <script src="/js/script.js"></script> 
+   <script src="https://kit.fontawesome.com/5eb0d09d0d.js"></script>
 </body>
 </html>

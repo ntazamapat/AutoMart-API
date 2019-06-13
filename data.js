@@ -1,12 +1,16 @@
-
+const session ={
+    "user":false,
+}
 const AllData=[
+    
+    
     {
       "user": {
         "_id": 1,
-        "email": "clarkeschultz@gink.com",
+        "email": "ntazamapat@yahoo.fr",
+        "password":"user",
         "firstName": "Powell",
         "lastName": "Huff",
-        "password": "nostrud minim officia cillum non ex laboris",
         "address": "537 Himrod Street, Barronett, Montana, 8560",
         "isAdmin": true,
         "cars": [
@@ -87,9 +91,9 @@ const AllData=[
       "user": {
         "_id": 2,
         "email": "stephaniehowell@combogen.com",
+        "password":"user",
         "firstName": "Lee",
         "lastName": "Barnett",
-        "password": "id velit quis mollit ea culpa laboris",
         "address": "619 Schroeders Avenue, Cannondale, Northern Mariana Islands, 8030",
         "isAdmin": true,
         "cars": [
@@ -170,9 +174,9 @@ const AllData=[
       "user": {
         "_id": 3,
         "email": "schultzsimon@xplor.com",
+        "password":"user",
         "firstName": "Reba",
         "lastName": "Herman",
-        "password": "veniam consectetur labore ad nulla qui excepteur",
         "address": "283 Clinton Avenue, Graniteville, Kentucky, 5486",
         "isAdmin": false,
         "cars": [
@@ -182,7 +186,7 @@ const AllData=[
             "created_on": "2018-02-26T09:12:49 -02:00",
             "price": 4806.6861,
             "state": "new",
-            "status":"available",
+            "status":"pending",
             "manufacturer": "ZOLAVO",
             "image":"https://res.cloudinary.com/dmgeldhs1/image/upload/v1559908605/picture-5_halmns.jpg",
             "model": "ZOLAVO",
@@ -216,7 +220,7 @@ const AllData=[
             "created_on": "2016-08-10T08:57:25 -02:00",
             "price": 8436.9258,
             "state": "new",
-            "status":"available",
+            "status":"pending",
             "manufacturer": "PROGENEX",
             "image":"https://res.cloudinary.com/dmgeldhs1/image/upload/v1559908668/picture-6_rzpp7i.jpg",
             "model": "PROGENEX",
@@ -247,126 +251,8 @@ const AllData=[
           }
         ]
       }
-    },
-    {
-      "user": {
-        "_id": 4,
-        "email": "foleyblevins@progenex.com",
-        "firstName": "Angelia",
-        "lastName": "Buchanan",
-        "password": "velit deserunt amet et sunt laboris deserunt",
-        "address": "788 Madeline Court, Centerville, Massachusetts, 2338",
-        "isAdmin": false,
-        "cars": [
-          {
-            "id": 8,
-            "owner": 4,
-            "created_on": "2017-01-06T05:03:34 -02:00",
-            "price": 7497.6369,
-            "state": "new",
-            "status":"sold",
-            "manufacturer": "ENQUILITY",
-            "image":"https://res.cloudinary.com/dmgeldhs1/image/upload/v1559908685/picture-7_qhbu9u.jpg",
-            "model": "ENQUILITY",
-            "body_type": "car",
-            "order": {
-              "id": "",
-              "buyer": "",
-              "car_id": "",
-              "amount": "",
-              "status":""
-            },
-            "flags": [
-              {
-                "_id": "5ceef41d93f4d25c7a9e33eb",
-                "car_id": "<SyntaxError: missing ) after argument list>",
-                "created_on": "2016-06-30T04:26:12 -02:00",
-                "reason": "exercitation officia incididunt minim anim voluptate dolor exercitation tempor qui mollit nisi",
-                "description": "Lorem qui consequat fugiat duis enim pariatur"
-              },
-              {
-                "_id": "5ceef41d7489f5f8dde9f8f1",
-                "car_id": "<SyntaxError: missing ) after argument list>",
-                "created_on": "2014-01-24T03:47:12 -02:00",
-                "reason": "qui esse aute dolore adipisicing est duis et incididunt adipisicing amet pariatur",
-                "description": "nisi labore ullamco nostrud sunt et proident"
-              }
-            ]
-          },
-          {
-            "id": 9,
-            "owner": 4,
-            "created_on": "2018-06-12T03:47:38 -02:00",
-            "price": 2403.5085,
-            "state": "new",
-            "status":"sold",
-            "manufacturer": "CINESANCT",
-            "image":"https://res.cloudinary.com/dmgeldhs1/image/upload/v1559908697/picture-8_zkkkty.jpg",
-            "model": "CINESANCT",
-            "body_type": "car",
-            "order": {
-              "id": 9,
-              "buyer": 4,
-              "car_id": 9,
-              "amount": 3850.6347?
-              "status":"accepted"
-            },
-            "flags": [
-              {
-                "_id": "5ceef41d5b63dc599845a515",
-                "car_id": "<SyntaxError: missing ) after argument list>",
-                "created_on": "2015-02-18T12:04:52 -02:00",
-                "reason": "nostrud amet velit fugiat et proident sint velit ex in fugiat sunt",
-                "description": "amet in consectetur elit velit elit exercitation"
-              },
-              {
-                "_id": "5ceef41d1751c141995ed580",
-                "car_id": "<SyntaxError: missing ) after argument list>",
-                "created_on": "2015-10-18T10:08:36 -02:00",
-                "reason": "cupidatat velit elit ut et ullamco amet deserunt laboris esse proident ea",
-                "description": "consequat Lorem sint cillum nulla ut reprehenderit"
-              }
-            ]
-          }
-        ]
-      }
-    },
-//    { 
-//        "user":{
-//         "id":5,
-//         "firstName":"Reine",
-//         "lastName":"Alice",   
-//         "email":"reinelic",
-//         "password":"andela",
-//         "cars":[
-//             {
-//                 id:"10",
-//                 "owner":5,
-//                 "status":"available",
-//                 "state":"new",
-//                 "price":3980.45,
-//                 "order" :{
-//                     "id":9,
-//                     "car_id":9,
-//                     "status":"",
-//                     "amount":""
-                    
-                    
-//                 },
-                
-//                 "manufacturer":"Mercedes",
-//                 "model":"MayBach"
-//           }
-//         ]
-
-
-
-//    }
-   
-
-        
-
-//       }
+    }
+    
   ];
 
 
