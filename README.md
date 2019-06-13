@@ -1,6 +1,6 @@
 # AutoMart API
 
-Restful Node Car sell Application
+Restful Node Car Selling Application
 
 ## Table of Contents 
 
@@ -18,13 +18,8 @@ Restful Node Car sell Application
 
 
 ## Installation
-
-- All the `code` required to get started
    
    1. Setup a Node Project
-   
-   
-- Images of what it should look like
 
 ### Clone
 
@@ -34,11 +29,7 @@ Restful Node Car sell Application
 
 - You can use nodemon  to run the code
 
-
-
-
 > now install npm dependecies packages
-
 
 $ npm install
 
@@ -61,19 +52,21 @@ $ npm install
 | /api/v1/car/all | GET | User view all cars whether sold or unsold |	
 | /api/v1/car/:id | DELETE | Admin can delete a specific car |
 
-## Usage 
+```
+
+### Usage 
 
 You can test the differents endpoints by clicking on the link of the UI
 You might also use PostMan
 
 
-## Authors
+### Author
 
 * **Patrick Ntazama** - *Initial work* - [AutoMart](https://github.com/ntazamapat/AutoMart-API)
 
 
 
-## License
+### License
 
 [![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
 
