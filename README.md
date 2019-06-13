@@ -58,6 +58,18 @@ Below the functional endpoints API
 | /api/v1/car/:id | DELETE | Admin can delete a specific car |
 
 ```
+## Languages & tools
+
+### HTML
+- [express-edge](https://github.com/ecrmnn/module-boilerplate) for some templating.
+
+### JavaScript
+
+### CSS
+
+.
+
+
 
 ### Usage 
 
