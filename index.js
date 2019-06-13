@@ -64,6 +64,10 @@ app.get('/api/v1/signup',(req,res)=>{
     res.render("signup")
 })
 
+app.get('/api/v1/signin',(req,res)=>{
+    res.render("signin")
+})
+
 app.get('/api/v1/sell',(req,res)=>{
     res.render("sell");
 })

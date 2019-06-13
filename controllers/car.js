@@ -226,10 +226,7 @@ exports.updateCarStatusId = (req,res)=>{
     
     var car = allcars.find(elt=>elt.id === parseInt(carId));
     var user = AllData.find(elt=>elt.user._id == car.owner)
-    if(user.email !== AllData[0].session)
-    {
-        res.send("you can not update this data !")
-    }
+    
     if(!car || !user){
         const err ={
             "status":400,
@@ -328,9 +325,7 @@ exports.deleteCar = (req,res)=>{
     
     carArray.splice(indexCar,1);
     allcars.splice(indexCar,1);
-    res.send(allcars);
-    res.send(carArray);
-
+    
     var response ={
         "status":200,
         "data":"Car Ad successfully deleted"
