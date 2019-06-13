@@ -33,9 +33,13 @@ Restful Node Car Selling Application
 
 $ npm install
 
+### Features
+
+Below the functional endpoints API
+
 ```
 
-## Features
+
 
  URL | METHOD | DESCRIPTION |
 | ------ | ------ | ---------- |
